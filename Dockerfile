@@ -34,4 +34,6 @@ RUN chmod +x /etc/postfix/start.sh && \
 
 EXPOSE 587 8025
 
+VOLUME ["/etc/postfix/startup-scripts"]
+
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
