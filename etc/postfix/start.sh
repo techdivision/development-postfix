@@ -54,4 +54,8 @@ postconf -e "transport_maps = hash:$FILE"
 # Use 587 (submission)
 sed -i -r -e 's/^#submission/submission/' /etc/postfix/master.cf
 
+# load start-up-scripts
+source /etc/postfix/startup-scripts/*.sh
+
+# start postfix
 /usr/sbin/postfix -c /etc/postfix start
